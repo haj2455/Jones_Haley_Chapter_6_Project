@@ -12,6 +12,7 @@ double calcArea(double length, double width);
 
 void displayProperties(double perimeter, double area);
 
+// This program gets the length and width of a rectangle, then calculates and displays its perimeter and area.
 int main() {
 	double length, width, perimeter, area;
 	char choice;
@@ -19,14 +20,15 @@ int main() {
 	cout << "Rectangle Properties Calculator\n";
 
 	do {
-		// Get valid length
 		getLength_Width(length, width);
+		// This function prompts the user to enter the length and width of a rectangle and validates the input.It returns both quantities back to the calling function
 
-		// Calculate perimeter and area
+		// This function takes as input the length and width of a rectangle, calculates the perimeter, and returns the result of the calculation to the caller
 		perimeter = calcPerimeter(length, width);
 		area = calcArea(length, width);
+		// This function takes as input the length and width of a rectangle, calculates the area and returns the area to the caller
 
-		// Display results
+		// This function takes as input the perimeter and area of a rectangle and displays these values on the monitor
 		displayProperties(perimeter, area);
 
 		// Ask user if they want to continue
