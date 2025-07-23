@@ -18,6 +18,10 @@ int main() {
 	string regionName, safestRegion;
 	int accidents, lowestAccidents;
 
+	getRegInfo(regionName, accidents);
+	safestRegion = regionName;
+	lowestAccidents = accidents;
+
 	for (int i = 1; i < NUM_REGIONS; i++) {
 		getRegInfo(regionName, accidents);
 		// This function gets the name of a region and the number of accidents that occurred in that region during the past year
