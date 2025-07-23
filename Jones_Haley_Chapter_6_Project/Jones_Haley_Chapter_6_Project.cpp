@@ -2,19 +2,57 @@
 //
 
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+void getLength_Width(double& lenght, double& width);
+
+double calcPerimeter(double lenght, double width);
+
+double calcArea(double length, double width);
+
+void displayProperties(double perimeter, double area);
+
+int main() {
+	double length, width, perimeter, area;
+	char choice;
+
+	cout << "Rectangle Properties Calculator\n";
+
+	do {
+		getLength_Width(length, width);
+
+		perimeter = calcPerimeter(length, width);
+		area = calcArea(length, width);
+
+		displayProperties(perimeter, area);
+
+		cout << "Do you want to process another rectangle? (Y/N): ";
+		cin >> choice;
+
+	} while (choice == 'Y' || choice == 'y');
+
+	cout << "Thank you for using the program.\n";
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void getLength_Width(double& length, double& width) {
+	do {
+		cout << "Enter the length of the rectangle: ";
+		cin >> length;
+		if (length <= 0)
+			cout << "Length must be greater than 0.\n";
+	} while (length <= 0);
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+double calcPerimeter(double length, double width) {
+	return 2 * (length + width);
+}
+
+double calcArea(double length, double width) {
+	return length * width;
+}
+
+void displayProperties(double perimeter, double area) {
+	cout << "Perimeter of the rectangle: " << perimeter << endl;
+	cout << "Area of the rectangle: " << area << endl;
+}
