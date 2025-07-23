@@ -26,7 +26,6 @@ int main() {
 		getRegInfo(regionName, accidents);
 		// This function gets the name of a region and the number of accidents that occurred in that region during the past year
 		if (isLower(accidents, lowestAccidents)) {
-			// This function takes two integer values as input, it returns true if the first value is <= the second value, otherwise it returns false.
 			lowestAccidents = accidents;
 			safestRegion = regionName;
 		}
