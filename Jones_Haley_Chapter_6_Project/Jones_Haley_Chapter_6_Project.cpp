@@ -19,13 +19,17 @@ int main() {
 	cout << "Rectangle Properties Calculator\n";
 
 	do {
+		// Get valid length
 		getLength_Width(length, width);
 
+		// Calculate perimeter and area
 		perimeter = calcPerimeter(length, width);
 		area = calcArea(length, width);
 
+		// Display results
 		displayProperties(perimeter, area);
 
+		// Ask user if they want to continue
 		cout << "Do you want to process another rectangle? (Y/N): ";
 		cin >> choice;
 
@@ -35,6 +39,7 @@ int main() {
 	return 0;
 }
 
+// Function Definition
 void getLength_Width(double& length, double& width) {
 	do {
 		cout << "Enter the length of the rectangle: ";
