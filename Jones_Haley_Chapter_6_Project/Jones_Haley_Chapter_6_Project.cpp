@@ -10,6 +10,7 @@ const int MAX_F = 20;
 
 double getCelsius(int fahrenheit);
 
+// This program produces a table showing degrees Fahrenheit between the values of 0 and 20 with the corresponding Celsius value.The table has a title, the columns are labeled,and the temperature values are right aligned in each column.Temperature values are displayed with one decimal point of precision.
 int main() {
 	cout << "Temperature Conversion Table\n";
 	cout << setw(10) << "Fahrenheit" << setw(15) << "Celsius\n";
@@ -23,6 +24,7 @@ int main() {
 	return 0;
 }
 
+// This takes as input a temperature value in degrees Fahrenheit and returns the equivalent value of the temperature in degrees Celsius
 double getCelsius(int fahrenheit) {
 	return (5.0 / 9.0) * (fahrenheit - 32);
 }
