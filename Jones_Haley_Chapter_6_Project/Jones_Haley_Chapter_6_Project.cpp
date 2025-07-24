@@ -6,10 +6,12 @@
 #include <cmath>
 using namespace std;
 
+// Constants
 const double SQFT_PER_GALLON = 110.0;
 const double HOURS_PER_GALLON = 8.0;
 const double LABOR_RATE_PER_HOUR = 25.0;
 
+// Functions being used
 int getNumberOfRooms();
 double getSquareFeet(int roomNumber);
 double getPaintPrice(int roomNumber);
@@ -18,6 +20,7 @@ double calculateLaborHours(double squareFeet);
 void displayEstimate(int totalGallons, double totalLaborHours, double totalPaintCost, double totalLaborCost);
 
 int main() {
+	// Provide an estimate for painting including cost for paint, cost of labor, gallons of paint required, number of labor hours
 	int numRooms = getNumberOfRooms();
 
 	int totalGallons = 0;
@@ -29,6 +32,7 @@ int main() {
 		double sqft = getSquareFeet(i);
 		double pricePerGallon = getPaintPrice(i);
 
+		// Perform calculations
 		int gallons = calculateGallons(sqft);
 		double laborHours = calculateLaborHours(sqft);
 		double paintCost = gallons * pricePerGallon;
@@ -40,11 +44,13 @@ int main() {
 		totalLaborCost += laborCost;
 	}
 
+	// Display the final results
 	displayEstimate(totalGallons, totalLaborHours, totalPaintCost, totalLaborCost);
 
 	return 0;
 }
 
+// Input the number of rooms
 int getNumberOfRooms() {
 	int rooms;
 	do {
@@ -57,6 +63,7 @@ int getNumberOfRooms() {
 	return rooms;
 }
 
+// Enter SquareFeet of the room
 double getSquareFeet(int roomNumber) {
 	double sqft;
 	do {
@@ -69,6 +76,7 @@ double getSquareFeet(int roomNumber) {
 	return sqft;
 }
 
+// Enter paint price per gallon for room
 double getPaintPrice(int roomNumber) {
 	double price;
 	do {
@@ -81,14 +89,17 @@ double getPaintPrice(int roomNumber) {
 	return price;
 }
 
+// Calculate the gallons of paint needed for the room
 int calculateGallons(double squareFeet) {
 	return static_cast<int>(ceil(squareFeet / SQFT_PER_GALLON));
 }
 
+// Calculate the total labr hours
 double calculateLaborHours(double squareFeet) {
 	return (squareFeet / SQFT_PER_GALLON) * HOURS_PER_GALLON;
 }
 
+// Display the final estimation
 void displayEstimate(int totalGallons, double totalLaborHours, double totalPaintCost, double totalLaborCost) {
 	double totalCost = totalPaintCost + totalLaborCost;
 
