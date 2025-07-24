@@ -92,8 +92,11 @@ void displayEstimate(double paintCharge, int totalGallons, double laborCharge, d
 	double totalCost = paintCharge + laborCharge;
 
 	cout << fixed << setprecision(2);
-	cout << "\nPaint Job Estimate:\n":
+	cout << "\nPaint Job Estimate:\n";
 	cout << "--------------------\n";
 	cout << "Gallons of paint required :" << totalGallons << endl;
-
+	cout << "Hours of labor required:   " << totalLaborHours << endl;
+	cout << "Cost of paint:             " << paintCharge << endl;
+	cout << "Labor charges:             " << laborCharge << endl;
+	cout << "Total cost:                " << totalCost << endl;
 }
