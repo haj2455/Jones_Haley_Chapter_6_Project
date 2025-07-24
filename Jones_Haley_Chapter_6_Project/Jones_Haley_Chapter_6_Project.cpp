@@ -29,7 +29,39 @@ int main() {
 		total += score;
 
 		if (isLower(score, minScore)) {
+			minScore = score;
 		}
-		if (isHigher(score, maxScore))
+		if (isHigher(score, maxScore)) {
+			maxScore = score
+		}
 	}
+
+	double average = calcAverage(total, minScore, maxScore);
+
+	cout << fixed setprecision(2);
+	cout << "\nFInal average score (after dropping the highest and lowest): " << average << endl;
+
+	return 0;
 }
+
+double getScore() {
+	double score;
+	do {
+		cout << "Enter judge's score (0.0 - 10.0): ";
+		cin >> score;
+		if (score < 0.0 || score > 10.0) {
+			cout << "Invalid input. Score must be between 0 nad 10.\n";
+		}
+	} while (score < 0.0 || score > 10.0);
+	return score;
+}
+
+bool isLower(double a, double b) {
+	return a <= b;
+}
+
+bool isHigher(double a, double b) {
+	return a >= b;
+}
+
+double 
