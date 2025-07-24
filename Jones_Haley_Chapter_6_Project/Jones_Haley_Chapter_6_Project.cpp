@@ -53,6 +53,47 @@ int getRooms() {
 	int rooms;
 	do {
 		cout << "Enter number of rooms to be painted (minimum 1): ";
+		cin >> rooms;
+		if (rooms < 1)
+			cout << "Number of rooms must be at least 1.\n";
+	} while (rooms < 1);
+	return rooms;
+}
 
-	}
+double getSqFt(int roomNum) {
+	double sqft;
+	do {
+		cout << "Enter square feet for room " << roomNum << ": "
+			;
+		cin >> sqft;
+		if (sqft <= 0)
+			cout << "Square footage must be greater than 0.\n";
+	} while (sqft <= 0);
+	return sqft;
+}
+
+double getPricePerGallon(int roomNum) {
+	double price;
+	do {
+		cout << "Enter price per gallon of paint for room " << roomNum << " ($10 minimum: ";
+		cin >> price;
+		if (price < 10.0)
+			cout << "Price must be at least $10.00.\n";
+	} while (price < 10.0);
+	return price;
+ }
+
+int gallonForRoom(double sqft) {
+
+	return static_cast<int>(ceil(sqft / SQFT_PER_GALLON));
+}
+
+void displayEstimate(double paintCharge, int totalGallons, double laborCharge, double totalLaborHours) {
+	double totalCost = paintCharge + laborCharge;
+
+	cout << fixed << setprecision(2);
+	cout << "\nPaint Job Estimate:\n":
+	cout << "--------------------\n";
+	cout << "Gallons of paint required :" << totalGallons << endl;
+
 }
