@@ -32,13 +32,13 @@ int main() {
 			minScore = score;
 		}
 		if (isHigher(score, maxScore)) {
-			maxScore = score
+			maxScore = score;
 		}
 	}
 
 	double average = calcAverage(total, minScore, maxScore);
 
-	cout << fixed setprecision(2);
+	cout << fixed << setprecision(2);
 	cout << "\nFInal average score (after dropping the highest and lowest): " << average << endl;
 
 	return 0;
