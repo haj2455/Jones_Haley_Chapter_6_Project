@@ -29,5 +29,30 @@ int main() {
 
 	numRooms = getRooms();
 
-	for 
+	for (int i = 1; i <= numRooms; i++) {
+		double sqft = getSqFt(i);
+		double pricePerGallon = getPricePerGallon(i);
+
+		int gallons = gallonsForRoom(sqft);
+		double laborHours = (sqft / SQFT_PER_GALLON) * LABOR_HOURS_PER_GALLON;
+		double paintCost = gallons * pricePerGallon;
+		double laborCost = laborHours * LABOR_RATE_PER_HOUR;
+
+		totalGallons += gallons;
+		totalPaintCharge += paintCost;
+		totalLaborHours += laborHours;
+		totalLaborCharge += laborCost;
+	}
+
+	displayEstimate(totalPaintCharge, totalGallons, totalLaborCharge, totalLaborHours);
+
+	return 0;
+}
+
+int getRooms() {
+	int rooms;
+	do {
+		cout << "Enter number of rooms to be painted (minimum 1): ";
+
+	}
 }
