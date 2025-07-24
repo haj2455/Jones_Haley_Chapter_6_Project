@@ -64,4 +64,6 @@ bool isHigher(double a, double b) {
 	return a >= b;
 }
 
-double 
+double calcAverage(double total, double minScore, double maxScore) {
+	return (total - minScore - maxScore) / 3.0;
+}
