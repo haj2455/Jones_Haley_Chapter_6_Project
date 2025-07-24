@@ -83,6 +83,11 @@ double getPricePerGallon(int roomNum) {
 	return price;
  }
 
+int gallonsForRoom(double sqft)
+{
+	return 0;
+}
+
 int gallonForRoom(double sqft) {
 
 	return static_cast<int>(ceil(sqft / SQFT_PER_GALLON));
@@ -94,9 +99,9 @@ void displayEstimate(double paintCharge, int totalGallons, double laborCharge, d
 	cout << fixed << setprecision(2);
 	cout << "\nPaint Job Estimate:\n";
 	cout << "--------------------\n";
-	cout << "Gallons of paint required :" << totalGallons << endl;
-	cout << "Hours of labor required:   " << totalLaborHours << endl;
-	cout << "Cost of paint:             " << paintCharge << endl;
-	cout << "Labor charges:             " << laborCharge << endl;
-	cout << "Total cost:                " << totalCost << endl;
+	cout << "Gallons of paint required:  " << totalGallons << endl;
+	cout << "Hours of labor required:    " << totalLaborHours << endl;
+	cout << "Cost of paint:             $" << paintCharge << endl;
+	cout << "Labor charges:             $" << laborCharge << endl;
+	cout << "Total cost:                $" << totalCost << endl;
 }
